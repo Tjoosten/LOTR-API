@@ -1,0 +1,14 @@
+{
+    "name": "tim/lotr-api",
+    "description": "Some Lord Of The Rings Api",
+    "require": {
+        "slim/slim": "~2.5"
+    },
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "Tjoosten",
+            "email": "Tjoosten3@gmail.com"
+        }
+    ]
+}
