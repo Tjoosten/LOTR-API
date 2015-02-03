@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS LOTR_Api; 
+
+USE LOTR_Api;
+
+CREATE TABLE IF NOT EXISTS Persons  (
+	Persons_id INT(11) AUTO_INCREMENT, 
+	Name VARCHAR(255),
+	Other_names VARCHAR(255),
+	Titles TEXT,
+	Birth VARCHAR(255),
+	Death VARCHAR(255), 
+	Race VARCHAR(255),
+	Culture VARCHAr(255),
+	Gender Varchar(70),
+	Hair_color varchar(255),
+	EyeColor Varchar(255),
+	PRIMARY KEY(Persons_id))
+	ENGINE = MyISAM:
