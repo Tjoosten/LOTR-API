@@ -12,14 +12,10 @@
   });
 
   $api->get('/Orcs', function() use($con) {
-    $query =$con->query("SELECT * FROM API WHERE Race = 'Orcs'")
-                ->fetch_array(MYSQLI_ASSOC);
+    $query = $con->query("SELECT swapi_id FROM API WHERE Race = 'Orcs'")->fetch_all(MYSQLI_ASSOC);
 
-    if (count($query) == 0) {
-        echo '{"error": "Could not get results from the database"}';
-    } elseif (count($query) > 0) {
-      echo '{"Orcs": ' . json_encode($query) . '}';
-    }
+    echo '{"Orcs": ' . json_encode($query, JSON_PRETTY_PRINT) . '}';
+
   });
 
   // Bootstrap the API
