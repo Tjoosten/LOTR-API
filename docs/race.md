@@ -13,6 +13,8 @@ Content-Type: text/html
 
 ## Return (json array)
 
+**Note:** This array will repeat itself for each found record.
+
 ```json
 [{
   "swapi_id":8,
