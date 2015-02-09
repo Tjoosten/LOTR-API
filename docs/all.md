@@ -1,7 +1,17 @@
 http://wwww.domain.com/all
 ============================
 
-## Return
+## Return (Curl)
+
+```bash
+HTTP/1.1 200 OK
+Host: localhost
+Connection: close
+X-Powered-By: PHP/5.5.14
+Content-Type: text/html
+```
+
+## Return (json array)
 
 ```json
 [{
