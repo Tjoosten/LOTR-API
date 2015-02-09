@@ -1,5 +1,5 @@
-http://www.domain.com/race/:race
-============================
+http://www.domain.com/gender/:gender
+===============================================
 
 ## Possible Values
 
