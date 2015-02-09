@@ -1,13 +1,12 @@
-http://www.domain.com/race/:race
+http://www.domain.com/gender/:gender
 ===============================================
 
 ## Possible Values
 
-| Value:        | Type:      |
-| :------------ | :--------- |
-| `Orcs`        | `string`   |
-| `Elves`       | `string`   |
-| `Hobbits`     | `string`   |
+| Value:        | Type:       |
+| :------------ | :---------- |
+| `Male`        | `string`    |
+| `Female`      | `string`    |
 
 ## Return (Curl)
 
