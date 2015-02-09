@@ -1,4 +1,4 @@
-http://www.domain.com/all
+http://www.domain.com/race/:race
 ============================
 
 ## Possible Values
