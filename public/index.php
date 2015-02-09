@@ -31,5 +31,13 @@
     echo $query;
   });
 
+  $api->get('/:id', function($id) {
+    $query = \User::Where('Swapi_id', '=', $id)
+                  ->get()
+                  ->toJson();
+
+    echo $query;
+  });
+
   // Bootstrap everything
   $api->run();

@@ -1,4 +1,4 @@
-http://www.domain.com/all
+http://www.domain.com/:id
 ============================
 
 ## Return (Curl)
@@ -12,8 +12,6 @@ Content-Type: text/html
 ```
 
 ## Return (json array)
-
-**Note:** This array will repeat itself for each found record.
 
 ```json
 [{
