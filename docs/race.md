@@ -1,6 +1,13 @@
 http://www.domain.com/all
 ============================
 
+## Possible Values
+
+| Value:        |
+| :------------ |
+| `Male`        |
+| `Female`      |
+
 ## Return (Curl)
 
 ```bash
