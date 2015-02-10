@@ -1,3 +1,0 @@
----
---- The MySQL database structure for the LOTR API.
----
