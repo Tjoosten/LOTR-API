@@ -1,3 +1,0 @@
----
---- The database file for the LOTR - API
----
