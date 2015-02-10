@@ -1,42 +1,60 @@
 <?php
 
+  /**
+   * @author    Tim Joosten 
+   * @package   LOTR Api
+   * @license   MIT License
+   * @copyright Tim Joosten, 2015
+   */
+
   require '../vendor/autoload.php';
 
-  $api = new Slim\Slim();
+  // Setting up classes.
+  $api  = new Slim\Slim();
 
+  /**
+   * GET Routes
+   */
   $api->get('/', function() {
     echo '{ "The api is running!" }';
   });
 
-  $api->get('/all', function() {
+  $api->get('/all', function() use($api) {
     $query = \User::all()
                   ->toJson();
-
-    echo $query;
+    // Response
+    $api->response->headers->set('Content-type', 'application/json');
+    $api->response->setBody($query);
   });
 
-  $api->get('/gender/:value', function($value) {
+  $api->get('/gender/:value', function($value) use($api) {
     $query = \User::Where('Gender', '=', $value)
                   ->get()
                   ->toJson();
 
-    echo $query;
+    // Response
+    $api->response->headers->set('Content-type', 'application/json');
+    $api->response->setBody($query);
   });
 
-  $api->get('/race/:value', function($value) {
+  $api->get('/race/:value', function($value) use($api) {
     $query = \User::Where('Race', '=', $value)
                   ->get()
                   ->toJson();
 
-    echo $query;
+    // Response
+    $api->response->headers->set('Content-type', 'application/json');
+    $api->response->setBody($query);
   });
 
-  $api->get('/:id', function($id) {
+  $api->get('/:id', function($id) use($api) {
     $query = \User::Where('Swapi_id', '=', $id)
                   ->get()
                   ->toJson();
 
-    echo $query;
+    // Response
+    $api->response->headers->set('Content-type', 'application/json');
+    $api->response->setBody($query);
   });
 
   // Bootstrap everything

@@ -6,7 +6,7 @@
         "illuminate/database": "*"
     },
     "autoload": {
-        "files": [ "app/config.php" ],
-        "classmap": [ "app/models" ]
+      "files": [ "app/config.php" ],
+      "classmap": [ "app/models" ]
     }
 }
