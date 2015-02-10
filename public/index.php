@@ -1,7 +1,7 @@
 <?php
 
   /**
-   * @author    Tim Joosten 
+   * @author    Tim Joosten
    * @package   LOTR Api
    * @license   MIT License
    * @copyright Tim Joosten, 2015
@@ -10,13 +10,32 @@
   require '../vendor/autoload.php';
 
   // Setting up classes.
-  $api  = new Slim\Slim();
+  $api  = new Slim\Slim(['mode'  => 'development']);
+
+  /**
+   * Mode configuration
+   */
+  $api->configureMode('development', function() use($api) {
+    $api->config([
+        'log.enable' => false,
+        'debug' => true
+    ]);
+  });
+
+  $api->configureMode('production', function() use($api) {
+    $api->config([
+        'log.enable' => true,
+        'debug' => false
+      ]);
+  });
 
   /**
    * GET Routes
+   * @return JSON array's
    */
-  $api->get('/', function() {
-    echo '{ "The api is running!" }';
+  $api->get('/', function() use($api) {
+    $api->response->headers->set('Content-type', 'application/json');
+    $api->response->setBody('{ "The api is running!" }');
   });
 
   $api->get('/all', function() use($api) {
