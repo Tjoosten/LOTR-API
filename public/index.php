@@ -99,5 +99,16 @@
     $api->response->setBody($query);
   });
 
+  /**
+   * PUT routes
+   */
+
+  # url: www.domain.com/insert/character
+  # cli: curl -X PUT -d '{"json":123}' http://localhost:8000/test
+  # php: <php option>
+  $api->put('/test', function() use($api) {
+
+  });
+
   # Bootstrap everything
   $api->run();
