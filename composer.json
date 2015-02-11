@@ -3,7 +3,6 @@
     "description": "A simple LOTR api",
     "require": {
         "slim/slim": "*",
-        "monolog/monolog": "*",
         "illuminate/cache": "*",
         "illuminate/filesystem": "*",
         "illuminate/database": "*",
