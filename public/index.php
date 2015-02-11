@@ -9,8 +9,15 @@
 
   require '../vendor/autoload.php';
 
+  use Monolog\Logger;
+  use Monolog\Handler\StreamHandler;
+
   // Setting up classes.
   $api  = new Slim\Slim(['mode'  => 'development']);
+
+  // Create log pipeline
+  $log = new Logger('API');
+  $log->pushHandler(new StreamHandler('../app/log/API.log', Logger::INFO));
 
   /**
    * Mode configuration
@@ -38,10 +45,11 @@
     $api->response->setBody('{ "The api is running!" }');
   });
 
-  $api->get('/all', function() use($api) {
+  $api->get('/all', function() use($api, $log) {
     $query = \User::all()
                   ->toJson();
     // Response
+    $log->addInfo(count($query) .' Record retrieved.');
     $api->response->headers->set('Content-type', 'application/json');
     $api->response->setBody($query);
   });

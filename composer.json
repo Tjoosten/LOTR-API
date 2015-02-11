@@ -1,12 +1,23 @@
 {
+    "name": "tim/api",
+    "description": "A simple LOTR api",
     "require": {
         "slim/slim": "*",
+        "monolog/monolog": "*",
         "illuminate/cache": "*",
         "illuminate/filesystem": "*",
         "illuminate/database": "*"
     },
     "autoload": {
-      "files": [ "app/config.php" ],
-      "classmap": [ "app/models" ]
-    }
+        "psr-4": {"Monolog\\": "src/Monolog"},
+        "files": [ "app/config.php" ],
+        "classmap": [ "app/models" ]
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tjoosten",
+            "email": "Tjoosten3@gmail.com"
+        }
+    ]
 }
