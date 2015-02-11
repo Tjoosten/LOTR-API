@@ -49,37 +49,44 @@
     $query = \User::all()
                   ->toJson();
     // Response
-    $log->addInfo(count($query) .' Record retrieved.');
+    $log->addInfo(count($query) .' Record(s) retrieved.');
+
     $api->response->headers->set('Content-type', 'application/json');
     $api->response->setBody($query);
   });
 
-  $api->get('/gender/:value', function($value) use($api) {
+  $api->get('/gender/:value', function($value) use($api, $log) {
     $query = \User::Where('Gender', '=', $value)
                   ->get()
                   ->toJson();
 
     // Response
+    $log->addInfo(count($query) .' Record(s) retrieved.');
+
     $api->response->headers->set('Content-type', 'application/json');
     $api->response->setBody($query);
   });
 
-  $api->get('/race/:value', function($value) use($api) {
+  $api->get('/race/:value', function($value) use($api, $log) {
     $query = \User::Where('Race', '=', $value)
                   ->get()
                   ->toJson();
 
     // Response
+    $log->addInfo(count($query) .' Record(s) retrieved.');
+
     $api->response->headers->set('Content-type', 'application/json');
     $api->response->setBody($query);
   });
 
-  $api->get('/:id', function($id) use($api) {
+  $api->get('/:id', function($id) use($api, $log) {
     $query = \User::Where('Swapi_id', '=', $id)
                   ->get()
                   ->toJson();
 
     // Response
+    $log->addInfo(count($query) .' Record(s) retrieved.');
+
     $api->response->headers->set('Content-type', 'application/json');
     $api->response->setBody($query);
   });

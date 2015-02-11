@@ -6,7 +6,8 @@
         "monolog/monolog": "*",
         "illuminate/cache": "*",
         "illuminate/filesystem": "*",
-        "illuminate/database": "*"
+        "illuminate/database": "*",
+        "illuminate/redis": "*"
     },
     "autoload": {
         "psr-4": {"Monolog\\": "src/Monolog"},
