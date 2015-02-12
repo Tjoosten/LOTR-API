@@ -11,7 +11,7 @@ curl -s https://getcomposer.org/installer | php
 php composer.phar install
 ```
 
-Edit the database configuratio in `app/config.php` to match your sessings.
+Edit the database configuration in `app/config.php` to match your settings.
 
 Now set your server's document root to the `public/` directory.
 
